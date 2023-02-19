@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.Core", "Blick.Logging.Core\Blick.Logging.Core.csproj", "{97931328-B4F4-4729-AECF-086CE3668C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.Tests", "Blick.Logging.Tests\Blick.Logging.Tests.csproj", "{EE33A3E9-A683-4387-B926-B828F3146D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.Abstractions", "Blick.Logging.Abstractions\Blick.Logging.Abstractions.csproj", "{6AEEB7A5-10E3-4928-86E5-4A23B406D10D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.ConsoleLogger", "Blick.Logging.ConsoleLogger\Blick.Logging.ConsoleLogger.csproj", "{CEB6045B-7627-46BF-99BA-97E5C53FCD82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.TestApi", "Blick.Logging.TestApi\Blick.Logging.TestApi.csproj", "{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97931328-B4F4-4729-AECF-086CE3668C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97931328-B4F4-4729-AECF-086CE3668C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97931328-B4F4-4729-AECF-086CE3668C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97931328-B4F4-4729-AECF-086CE3668C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE33A3E9-A683-4387-B926-B828F3146D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE33A3E9-A683-4387-B926-B828F3146D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE33A3E9-A683-4387-B926-B828F3146D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE33A3E9-A683-4387-B926-B828F3146D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEEB7A5-10E3-4928-86E5-4A23B406D10D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEEB7A5-10E3-4928-86E5-4A23B406D10D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEEB7A5-10E3-4928-86E5-4A23B406D10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEEB7A5-10E3-4928-86E5-4A23B406D10D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB6045B-7627-46BF-99BA-97E5C53FCD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB6045B-7627-46BF-99BA-97E5C53FCD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB6045B-7627-46BF-99BA-97E5C53FCD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB6045B-7627-46BF-99BA-97E5C53FCD82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
