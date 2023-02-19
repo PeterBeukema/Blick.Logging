@@ -1,4 +1,4 @@
-name: Publish
+name: Publish NuGet Package(s)
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     - name: Verify
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
-        git branch --remote --contains | grep origin/master
+        git branch --remote --contains | grep origin/main
         
     - name: Version
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
@@ -33,4 +33,4 @@ jobs:
       
     - name: Push
       run: |
-        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/Webclix/index.json --api-key ${{ secrets.WEBCLIX_PACKAGE_READ_AND_WRITE }} --skip-duplicate
+        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.PUBLISH_NUGET_PACKAGE_ACCESS_TOKEN }} --skip-duplicate
