@@ -3,12 +3,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Blick.Logging.Abstractions;
 
-public abstract class LoggerBase : ILogger
+public abstract class BlickLogger : ILogger
 {
     protected readonly string CategoryName;
     protected readonly LoggerOptions Options;
 
-    protected LoggerBase(string categoryName, LoggerOptions options)
+    protected BlickLogger(string categoryName, LoggerOptions options)
     {
         CategoryName = categoryName;
         Options = options;

@@ -9,7 +9,7 @@ namespace Blick.Logging.Core;
 
 public class LoggerProvider : ILoggerProvider
 {
-    private readonly ConcurrentDictionary<string, LoggerBase> loggers = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentDictionary<string, BlickLogger> loggers = new(StringComparer.OrdinalIgnoreCase);
     private readonly IDisposable? onChangeToken;
     private LoggerOptions options;
 
