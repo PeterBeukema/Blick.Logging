@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Blick.Logging.Abstractions;
-using Blick.Logging.ConsoleLogger;
+using Blick.Logging.ConsoleLogger.Extensions;
 using Blick.Logging.Core.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,12 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
 
-builder.Logging.AddBlickLogging(options => options.BuildLoggers = BuildLoggers);
-
-IEnumerable<ConsoleLogger> BuildLoggers(string name, LoggerOptions options)
-{
-    yield return new ConsoleLogger(name, options);
-}
+builder.Logging.AddBlickLogging(options => options.UseConsoleLogger());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

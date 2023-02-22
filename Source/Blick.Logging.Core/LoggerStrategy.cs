@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Blick.Logging.Abstractions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -8,7 +9,15 @@ namespace Blick.Logging.Core;
 
 public class LoggerStrategy : LoggerBase
 {
-    public LoggerStrategy(string categoryName, LoggerOptions options) : base(categoryName, options) { }
+    private readonly List<LoggerBase> loggers;
+
+    public LoggerStrategy(string categoryName, LoggerOptions options)
+        : base(categoryName, options)
+    {
+        loggers = options.BuildLoggers
+            .Select(buildLogger => buildLogger(categoryName, options))
+            .ToList();
+    }
 
     public override void Log<TState>(
         LogLevel logLevel,
@@ -17,9 +26,7 @@ public class LoggerStrategy : LoggerBase
         Exception? exception,
         Func<TState, Exception?, string> formatter)
     {
-        var loggers = Options.BuildLoggers?.Invoke(CategoryName, Options);
-
-        if (loggers == null)
+        if (!loggers.Any())
         {
             return;
         }

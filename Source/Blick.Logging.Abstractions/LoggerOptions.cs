@@ -8,5 +8,5 @@ public class LoggerOptions
 {
     public LogLevel MinimumLogLevel { get; set; } = LogLevel.Trace;
 
-    public Func<string, LoggerOptions, IEnumerable<LoggerBase>>? BuildLoggers { get; set; }
+    public List<Func<string, LoggerOptions, LoggerBase>> BuildLoggers { get; set; } = new();
 }
