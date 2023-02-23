@@ -8,5 +8,5 @@ public class LoggerOptions
 {
     public LogLevel MinimumLogLevel { get; set; } = LogLevel.Trace;
 
-    public List<Func<string, LoggerOptions, BlickLogger>> BuildLoggers { get; set; } = new();
+    public List<Func<string, LoggerOptions, Logger>> BuildLoggers { get; set; } = new();
 }

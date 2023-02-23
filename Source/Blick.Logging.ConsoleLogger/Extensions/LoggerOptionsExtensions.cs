@@ -11,6 +11,6 @@ public static class LoggerOptionsExtensions
         return loggerOptions;
     }
 
-    private static BlickLogger BuildConsoleLogger(string categoryName, LoggerOptions loggerOptions)
+    private static Logger BuildConsoleLogger(string categoryName, LoggerOptions loggerOptions)
         => new ConsoleLogger(categoryName, loggerOptions);
 }

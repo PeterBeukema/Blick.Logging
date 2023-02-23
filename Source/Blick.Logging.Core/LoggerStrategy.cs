@@ -7,9 +7,9 @@ using Microsoft.Extensions.Options;
 
 namespace Blick.Logging.Core;
 
-public class LoggerStrategy : BlickLogger
+public class LoggerStrategy : Logger
 {
-    private readonly List<BlickLogger> loggers;
+    private readonly List<Logger> loggers;
 
     public LoggerStrategy(string categoryName, LoggerOptions options)
         : base(categoryName, options)

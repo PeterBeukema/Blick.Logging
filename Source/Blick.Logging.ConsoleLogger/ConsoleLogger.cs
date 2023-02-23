@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Blick.Logging.ConsoleLogger;
 
-public class ConsoleLogger : BlickLogger
+public class ConsoleLogger : Logger
 {
     public ConsoleLogger(string categoryName, LoggerOptions options)
         : base(categoryName, options) { }

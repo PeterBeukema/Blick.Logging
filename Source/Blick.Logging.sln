@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.ConsoleLogger
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.TestApi", "Blick.Logging.TestApi\Blick.Logging.TestApi.csproj", "{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4595D938-B629-447F-86AF-CC8A9E7661B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blick.Logging.QueueLogger", "Blick.Logging.QueueLogger\Blick.Logging.QueueLogger.csproj", "{C9E56FF2-1DD8-4EF2-A0C6-8A2C46CDE74D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E56FF2-1DD8-4EF2-A0C6-8A2C46CDE74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E56FF2-1DD8-4EF2-A0C6-8A2C46CDE74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E56FF2-1DD8-4EF2-A0C6-8A2C46CDE74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E56FF2-1DD8-4EF2-A0C6-8A2C46CDE74D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F0F2D4D-A2BA-49E8-8C2E-709455C68AD9} = {4595D938-B629-447F-86AF-CC8A9E7661B7}
+		{EE33A3E9-A683-4387-B926-B828F3146D81} = {4595D938-B629-447F-86AF-CC8A9E7661B7}
 	EndGlobalSection
 EndGlobal

@@ -21,6 +21,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Blick.Logging.ConsoleLogger\Blick.Logging.ConsoleLogger.csproj" />
       <ProjectReference Include="..\Blick.Logging.Core\Blick.Logging.Core.csproj" />
+      <ProjectReference Include="..\Blick.Logging.QueueLogger\Blick.Logging.QueueLogger.csproj" />
     </ItemGroup>
 
 </Project>
