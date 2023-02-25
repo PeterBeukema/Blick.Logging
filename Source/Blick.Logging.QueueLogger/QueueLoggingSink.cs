@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Blick.Logging.Abstractions;
 using Blick.Logging.QueueLogger.Models;
 using Blick.Queueing.Abstractions;
@@ -13,12 +11,11 @@ public class QueueLoggingSink : LoggingSink
 {
     private readonly IMessagePublisher<QueueLoggingSink> messagePublisher;
     private readonly IQueue queue = new Queue { Name = "Log" };
-    private readonly List<LogEvent> logEvents = new();
 
     public QueueLoggingSink(
         IOptions<LoggerOptions> options,
         IMessagePublisher<QueueLoggingSink> messagePublisher)
-        : base(options)
+        : base(options.Value)
     {
         this.messagePublisher = messagePublisher;
     }
@@ -42,8 +39,6 @@ public class QueueLoggingSink : LoggingSink
             Exception = exception?.Message,
             StackTrace = exception?.StackTrace,
         };
-        
-        logEvents.Add(logEvent);
 
         try
         {
@@ -52,6 +47,7 @@ public class QueueLoggingSink : LoggingSink
         catch
         {
             // Explicitly do nothing - logging should never break the application
+            // TODO: Properly handle exceptions during log event publishing
         }
     }
 }

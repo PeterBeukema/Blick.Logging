@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Blick.Logging.Abstractions;
 
@@ -8,9 +7,9 @@ public abstract class LoggingSink
 {
     private readonly LoggerOptions options;
 
-    protected LoggingSink(IOptions<LoggerOptions> options)
+    protected LoggingSink(LoggerOptions options)
     {
-        this.options = options.Value;
+        this.options = options;
     }
 
     public abstract void Log<TState>(

@@ -8,7 +8,7 @@ namespace Blick.Logging.ConsoleLogger;
 public class ConsoleLoggingSink : LoggingSink
 {
     public ConsoleLoggingSink(IOptions<LoggerOptions> options)
-        : base(options) { }
+        : base(options.Value) { }
 
     public override void Log<TState>(
         string categoryName,
