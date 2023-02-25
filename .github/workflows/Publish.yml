@@ -24,6 +24,9 @@ jobs:
     - name: Add NuGet
       run: dotnet nuget add source --username PeterBeukema --password ${{ secrets.NUGET_READ_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/peterbeukema/index.json"
       
+    - name: Restore packages
+      run: dotnet restore Source
+      
     - name: Build
       run: dotnet build Source/Blick.Logging.sln --configuration Release /p:Version=${VERSION}
       
