@@ -24,6 +24,7 @@
       <PackageReference Include="Blick.Queueing.Abstractions" Version="0.0.3" />
       <PackageReference Include="Blick.Queueing.Core" Version="0.0.3" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
     </ItemGroup>
 
     <ItemGroup>
