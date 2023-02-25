@@ -21,6 +21,9 @@ jobs:
     - name: Version
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
       
+    - name: Add NuGet
+      run: dotnet nuget add source --username PeterBeukema --password ${{ secrets.NUGET_READ_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/peterbeukema/index.json"
+      
     - name: Build
       run: dotnet build Source/Blick.Logging.sln --configuration Release /p:Version=${VERSION}
       
@@ -35,6 +38,6 @@ jobs:
       
     - name: Push
       run: |
-        dotnet nuget push Blick.Logging.Abstractions.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
-        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
-        dotnet nuget push Blick.Logging.ConsoleLogger.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.Abstractions.${VERSION}.nupkg --source https://nuget.pkg.github.com/peterbeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/peterbeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.ConsoleLogger.${VERSION}.nupkg --source https://nuget.pkg.github.com/peterbeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
