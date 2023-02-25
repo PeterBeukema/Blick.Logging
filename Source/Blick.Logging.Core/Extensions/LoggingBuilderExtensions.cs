@@ -9,21 +9,17 @@ namespace Blick.Logging.Core.Extensions;
 
 public static class LoggingBuilderExtensions
 {
-    public static ILoggingBuilder AddBlickLogging(this ILoggingBuilder loggingBuilder)
+    public static ILoggingBuilder AddLogger(this ILoggingBuilder loggingBuilder, Action<LoggerOptions> configure)
     {
+        loggingBuilder.ClearProviders();
         loggingBuilder.AddConfiguration();
+        
         loggingBuilder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ILoggerProvider, LoggerProvider>());
         
         LoggerProviderOptions.RegisterProviderOptions<LoggerOptions, LoggerProvider>(loggingBuilder.Services);
 
-        return loggingBuilder;
-    }
-
-    public static ILoggingBuilder AddBlickLogging(this ILoggingBuilder loggingBuilder, Action<LoggerOptions> configure)
-    {
-        loggingBuilder.AddBlickLogging();
         loggingBuilder.Services.Configure(configure);
-        
+
         return loggingBuilder;
     }
 }

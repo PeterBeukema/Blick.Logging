@@ -7,6 +7,4 @@ namespace Blick.Logging.Abstractions;
 public class LoggerOptions
 {
     public LogLevel MinimumLogLevel { get; set; } = LogLevel.Trace;
-
-    public List<Func<string, LoggerOptions, Logger>> BuildLoggers { get; set; } = new();
 }

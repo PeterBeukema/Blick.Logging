@@ -20,4 +20,16 @@
       <ProjectReference Include="..\Blick.Logging.Abstractions\Blick.Logging.Abstractions.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+        <HintPath>..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.2\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Logging">
+        <HintPath>..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.2\Microsoft.Extensions.Logging.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Options">
+        <HintPath>..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.2\Microsoft.Extensions.Options.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

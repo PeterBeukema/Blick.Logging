@@ -35,6 +35,6 @@ jobs:
       
     - name: Push
       run: |
-        dotnet nuget push Blick.Logging.Abstractions.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.PUBLISH_NUGET_PACKAGE_ACCESS_TOKEN }} --skip-duplicate
-        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.PUBLISH_NUGET_PACKAGE_ACCESS_TOKEN }} --skip-duplicate
-        dotnet nuget push Blick.Logging.ConsoleLogger.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.PUBLISH_NUGET_PACKAGE_ACCESS_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.Abstractions.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.Core.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate
+        dotnet nuget push Blick.Logging.ConsoleLogger.${VERSION}.nupkg --source https://nuget.pkg.github.com/PeterBeukema/index.json --api-key ${{ secrets.NUGET_WRITE_TOKEN }} --skip-duplicate

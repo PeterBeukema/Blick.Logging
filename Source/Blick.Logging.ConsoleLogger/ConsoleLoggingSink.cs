@@ -1,15 +1,17 @@
 ﻿using System;
 using Blick.Logging.Abstractions;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Blick.Logging.ConsoleLogger;
 
-public class ConsoleLogger : Logger
+public class ConsoleLoggingSink : LoggingSink
 {
-    public ConsoleLogger(string categoryName, LoggerOptions options)
-        : base(categoryName, options) { }
+    public ConsoleLoggingSink(IOptions<LoggerOptions> options)
+        : base(options) { }
 
     public override void Log<TState>(
+        string categoryName,
         LogLevel logLevel,
         EventId eventId,
         TState state,
@@ -35,7 +37,7 @@ public class ConsoleLogger : Logger
         var message = formatter(state, exception);
 
         message = message.Replace(Environment.NewLine, Environment.NewLine.PadRight(10));
-        message = $"[{logLevel}] {now:yyyy-MM-dd HH:mm:ss} {CategoryName} - {message}";
+        message = $"[{logLevel}] {now:yyyy-MM-dd HH:mm:ss} {categoryName} - {message}";
         
         Console.WriteLine(message);
 
